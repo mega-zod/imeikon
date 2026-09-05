@@ -16,6 +16,10 @@ if (!API_KEY) console.warn('IMEI_API_KEY is not set. The site will start, but li
 app.use(express.json());
 app.use(express.static('public'));
 
+app.get('/api/check', (_req, res) => {
+  res.status(405).json({ error: 'Use the form or send a POST request with an IMEI.' });
+});
+
 function validImei(imei) {
   return /^\d{15}$/.test(imei);
 }

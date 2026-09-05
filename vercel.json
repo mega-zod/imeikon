@@ -4,5 +4,15 @@
     "api/check.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/check",
+      "destination": "/api/check.js"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    }
+  ]
 }
